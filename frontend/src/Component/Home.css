@@ -1,0 +1,136 @@
+.home-hero-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8%;
+  background: #0d1117;
+}
+
+.home-hero-content {
+  width: 50%;
+}
+
+.home-badge {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 30px;
+  background: rgba(0, 229, 255, .1);
+  color: #00e5ff;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.home-hero-content h1 {
+  font-size: 65px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.home-highlight {
+  color: #00e5ff;
+}
+
+.developer-role {
+  color: #cfcfcf;
+  margin-bottom: 20px;
+}
+
+.home-hero-content p {
+  color: #d6d6d6;
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.home-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.home-btn {
+  padding: 15px 35px;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: .3s;
+}
+
+.home-btn.primary {
+  background: #00e5ff;
+  color: black;
+}
+
+.home-btn.primary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px cyan;
+}
+
+.home-btn.outline {
+  border: 2px solid #00e5ff;
+  background: transparent;
+  color: white;
+}
+
+.home-btn.outline:hover {
+  background: #00e5ff;
+  color: black;
+}
+
+.home-hero-image {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+}
+
+.home-hero-image img {
+  width: 500px;
+  max-width: 100%;
+  animation: float 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 35px cyan);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@media (max-width: 992px) {
+  .home-hero-container {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 120px;
+  }
+
+  .home-hero-content,
+  .home-hero-image {
+    width: 100%;
+  }
+
+  .home-buttons {
+    justify-content: center;
+  }
+
+  .home-hero-content h1 {
+    font-size: 45px;
+  }
+
+  .home-hero-image img {
+    width: 320px;
+    margin-top: 40px;
+  }
+
+  .home-hero-container{
+    padding-top:120px;
+  }
+}

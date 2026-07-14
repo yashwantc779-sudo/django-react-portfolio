@@ -1,0 +1,107 @@
+.custom-cursor {
+  position: fixed;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+
+  background: radial-gradient(
+    circle,
+    rgba(0, 255, 255, 0.9) 0%,
+    rgba(99, 102, 241, 0.7) 30%,
+    rgba(168, 85, 247, 0.5) 55%,
+    rgba(236, 72, 153, 0.3) 75%,
+    transparent 100%
+  );
+
+  background-size: 300% 300%;
+
+  filter: blur(20px);
+
+  mix-blend-mode: screen;
+
+  animation:
+    gradientMove 6s ease infinite,
+    pulseGlow 2s ease-in-out infinite;
+}
+
+/* Inner Bright Dot */
+.custom-cursor::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: #ffffff;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  box-shadow:
+    0 0 15px #00ffff,
+    0 0 30px #3b82f6,
+    0 0 45px #8b5cf6,
+    0 0 60px #ec4899;
+}
+
+/* Outer Ring */
+.custom-cursor::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border: 2px solid rgba(255, 255, 255, 0.15);
+
+  animation: rotateRing 8s linear infinite;
+}
+
+@keyframes gradientMove {
+
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulseGlow {
+
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    filter: blur(18px);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.25);
+    filter: blur(24px);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    filter: blur(18px);
+  }
+}
+
+@keyframes rotateRing {
+
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
